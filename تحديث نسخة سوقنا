@@ -72,13 +72,12 @@
 
   <div class="cards" id="companyCards">
 
-    <div class="card company">
-      <h3>شركة النحلة</h3>
-      <p>خدمات ومنتجات متنوعة</p>
-      <p>📍 الشمالية - مروي</p>
-      <a class="button" href="#">عرض التفاصيل</a>
-    </div>
-
+<div class="card company">
+  <h3>شركة النحلة</h3>
+  <p>خدمات ومنتجات متنوعة</p>
+  <p>📍 الشمالية - مروي</p>
+  <a class="button" href="#">عرض التفاصيل</a>
+</div>
     <div class="card company">
       <h3>شركة زين</h3>
       <p>اتصالات وإنترنت</p>
