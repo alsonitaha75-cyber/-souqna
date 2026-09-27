@@ -16,25 +16,25 @@
     header {
       background: #1769aa;
       color: white;
-      padding: 25px 15px;
+      padding: 30px 15px;
       text-align: center;
     }
 
     header h1 {
-      margin: 0 0 8px;
+      margin: 0 0 10px;
       font-size: 32px;
     }
 
     header p {
       margin: 0;
-      font-size: 17px;
+      font-size: 18px;
     }
 
     nav {
       background: white;
-      padding: 12px;
+      padding: 15px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
     nav a {
@@ -44,50 +44,59 @@
       font-weight: bold;
     }
 
+    section {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
     .hero {
       text-align: center;
-      padding: 35px 15px;
+      padding: 20px 0;
     }
 
     .hero h2 {
       color: #1769aa;
-      margin-bottom: 10px;
     }
 
     .search {
-      width: 90%;
-      max-width: 500px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 25px auto;
+      max-width: 600px;
+    }
+
+    .search input {
+      flex: 1;
       padding: 12px;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 16px;
       box-sizing: border-box;
-      margin-top: 15px;
     }
 
-    .companies {
-      padding: 20px 15px;
-    }
-
-    .companies h2 {
-      text-align: center;
-      color: #1769aa;
-      margin-bottom: 25px;
+    .search button {
+      padding: 12px 20px;
+      background: #1769aa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
+      gap: 18px;
     }
 
     .card {
       background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 22px;
+      border-radius: 10px;
+      box-shadow: 0 2px 9px rgba(0,0,0,0.08);
       text-align: center;
     }
 
@@ -102,43 +111,41 @@
 
     .button {
       display: inline-block;
+      padding: 10px 18px;
       background: #1769aa;
       color: white;
       text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 7px;
-      margin-top: 10px;
-    }
-
-    .button:hover {
-      opacity: 0.9;
+      border-radius: 6px;
+      margin-top: 8px;
     }
 
     .add-business {
-      max-width: 700px;
-      margin: 40px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: #eaf4fb;
+      padding: 30px 20px;
       text-align: center;
-    }
-
-    .add-business h2 {
-      color: #1769aa;
+      border-radius: 12px;
     }
 
     footer {
+      margin-top: 40px;
       background: #1769aa;
       color: white;
       text-align: center;
-      padding: 20px 10px;
-      margin-top: 40px;
+      padding: 25px 15px;
     }
 
-    footer a {
-      color: white;
-      text-decoration: none;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      .search {
+        flex-direction: column;
+      }
+
+      .search button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -147,60 +154,91 @@
 
   <header>
     <h1>سوقنا</h1>
-    <p>للإعلانات ودليل الشركات والأنشطة التجارية في السودان</p>
+    <p>للإعلانات التجارية والأنشطة التجارية في السودان</p>
   </header>
 
   <nav>
     <a href="#home">الرئيسية</a>
-    <a href="#companies">الشركات</a>
-    <a href="#add">أضف نشاطك</a>
+    <a href="#companies">الشركات التجارية</a>
+    <a href="#add">إضافة نشاطك</a>
   </nav>
 
-  <section class="hero" id="home">
-    <h2>ابحث عن شركة أو نشاط تجاري</h2>
-    <p>دليلك للوصول إلى الشركات والأنشطة التجارية في السودان</p>
+  <section id="home">
+    <div class="hero">
+      <h2>مرحباً بكم في سوقنا</h2>
+      <p>
+        منصة سودانية للإعلانات التجارية ودليل الشركات والأنشطة التجارية،
+        تساعدك في الوصول إلى الخدمات المتنوعة في السودان.
+      </p>
 
-    <input
-      type="text"
-      id="searchInput"
-      class="search"
-      placeholder="اكتب اسم الشركة..."
-      onkeyup="searchCompanies()"
-    >
+      <div class="search">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="ابحث عن شركة أو نشاط تجاري"
+        >
+        <button onclick="searchCompanies()">بحث</button>
+      </div>
+    </div>
   </section>
 
-  <section class="companies" id="companies">
-    <h2>الشركات والأنشطة التجارية</h2>
+  <section id="companies">
+    <h2>الشركات التجارية</h2>
 
     <div class="cards" id="companyCards">
 
-      <div class="card">
+      <div class="card company">
         <h3>شركة النحلة</h3>
         <p>خدمات ومنتجات متنوعة</p>
         <p>📍 الشمالية - مروي</p>
-        <a href="#" class="button">عرض التفاصيل</a>
+        <a class="button" href="#">عرض التفاصيل</a>
       </div>
 
-      <div class="card">
+      <div class="card company">
         <h3>شركة زين</h3>
         <p>اتصالات وإنترنت</p>
         <p>📍 الشمالية - مروي</p>
         <a
+          class="button"
           href="https://wa.me/249915078710"
           target="_blank"
-          class="button"
         >واتساب</a>
       </div>
 
-      <div class="card">
+      <div class="card company">
         <h3>سوداني</h3>
         <p>اتصالات وإنترنت في السودان</p>
         <p>📍 الشمالية - مروي</p>
         <a
+          class="button"
           href="https://wa.me/249915078710"
           target="_blank"
-          class="button"
         >واتساب</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>إعلانات</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>أعلن معنا في سوقنا</h3>
+        <p>
+          يمكنك عرض شركتك أو نشاطك التجاري والوصول إلى العملاء
+          من خلال منصة سوقنا.
+        </p>
+        <a class="button" href="#add">أضف إعلانك</a>
+      </div>
+
+      <div class="card">
+        <h3>دليل الأنشطة التجارية</h3>
+        <p>
+          اكتشف الشركات والخدمات والأنشطة التجارية الموجودة
+          في مختلف مناطق السودان.
+        </p>
       </div>
 
     </div>
@@ -209,38 +247,40 @@
   <section id="add">
     <div class="add-business">
       <h2>أضف نشاطك التجاري</h2>
+
       <p>
-        لإضافة شركتك أو نشاطك التجاري إلى دليل سوقنا،
-        تواصل معنا عبر البريد الإلكتروني.
+        هل لديك شركة أو متجر أو نشاط تجاري؟
+        أضفه إلى سوقنا ليظهر للعملاء.
       </p>
 
-      <a
-        href="mailto:info@souqna.com"
-        class="button"
-      >تواصل معنا</a>
+      <a class="button" href="mailto:info@souqna.com">
+        تواصل معنا لإضافة نشاطك
+      </a>
     </div>
   </section>
 
   <footer>
     <p>© 2026 سوقنا - جميع الحقوق محفوظة</p>
-    <p>
-      <a href="mailto:info@souqna.com">info@souqna.com</a>
-    </p>
+    <p>إعلانات تجارية للشركات والأنشطة التجارية في السودان</p>
   </footer>
 
   <script>
     function searchCompanies() {
-      const input = document.getElementById("searchInput");
-      const filter = input.value.toLowerCase();
-      const cards = document.querySelectorAll(".card");
+      const input = document
+        .getElementById("searchInput")
+        .value
+        .trim()
+        .toLowerCase();
 
-      cards.forEach(function(card) {
-        const text = card.textContent.toLowerCase();
+      const companies = document.querySelectorAll(".company");
 
-        if (text.includes(filter)) {
-          card.style.display = "";
+      companies.forEach(function(company) {
+        const text = company.innerText.toLowerCase();
+
+        if (input === "" || text.includes(input)) {
+          company.style.display = "block";
         } else {
-          card.style.display = "none";
+          company.style.display = "none";
         }
       });
     }
