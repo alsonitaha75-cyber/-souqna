@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>سوقنا</title>
+  <title>سوقنا - دليل الشركات والإعلانات</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -16,25 +20,28 @@
     header {
       background: #1769aa;
       color: white;
-      padding: 30px 15px;
       text-align: center;
+      padding: 30px 15px;
     }
 
     header h1 {
-      margin: 0 0 10px;
-      font-size: 32px;
+      margin: 0 0 8px;
+      font-size: 34px;
     }
 
     header p {
       margin: 0;
-      font-size: 18px;
+      font-size: 17px;
     }
 
     nav {
       background: white;
-      padding: 15px;
+      padding: 14px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
@@ -45,45 +52,53 @@
     }
 
     section {
-      width: 90%;
-      max-width: 1000px;
-      margin: 30px auto;
+      max-width: 1100px;
+      margin: auto;
+      padding: 35px 15px;
     }
 
     .hero {
       text-align: center;
-      padding: 20px 0;
     }
 
     .hero h2 {
       color: #1769aa;
+      font-size: 28px;
+    }
+
+    .hero p {
+      line-height: 1.9;
     }
 
     .search {
       display: flex;
-      justify-content: center;
       gap: 10px;
+      max-width: 650px;
       margin: 25px auto;
-      max-width: 600px;
     }
 
     .search input {
       flex: 1;
-      padding: 12px;
+      padding: 14px;
       border: 1px solid #ccc;
-      border-radius: 8px;
+      border-radius: 7px;
       font-size: 16px;
-      box-sizing: border-box;
     }
 
     .search button {
-      padding: 12px 20px;
+      padding: 14px 25px;
+      border: none;
+      border-radius: 7px;
       background: #1769aa;
       color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
       font-size: 16px;
+      cursor: pointer;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #1769aa;
+      margin-bottom: 25px;
     }
 
     .cards {
@@ -94,15 +109,16 @@
 
     .card {
       background: white;
-      padding: 22px;
-      border-radius: 10px;
-      box-shadow: 0 2px 9px rgba(0,0,0,0.08);
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       text-align: center;
     }
 
     .card h3 {
       color: #1769aa;
       margin-top: 0;
+      font-size: 22px;
     }
 
     .card p {
@@ -111,32 +127,57 @@
 
     .button {
       display: inline-block;
-      padding: 10px 18px;
+      padding: 11px 20px;
       background: #1769aa;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 7px;
       margin-top: 8px;
+    }
+
+    .whatsapp {
+      background: #25D366;
     }
 
     .add-business {
       background: #eaf4fb;
-      padding: 30px 20px;
+      padding: 35px 20px;
       text-align: center;
       border-radius: 12px;
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 30px;
       background: #1769aa;
       color: white;
       text-align: center;
       padding: 25px 15px;
+      line-height: 1.8;
+    }
+
+    .top-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #1769aa;
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 45px;
+      text-decoration: none;
+      font-size: 20px;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 26px;
+        font-size: 28px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px;
       }
 
       .search {
@@ -150,91 +191,112 @@
   </style>
 </head>
 
-<body>
+<body id="home">
 
   <header>
     <h1>سوقنا</h1>
-    <p>للإعلانات التجارية والأنشطة التجارية في السودان</p>
+    <p>للإعلانات ودليل الشركات والأنشطة التجارية في السودان</p>
   </header>
 
   <nav>
     <a href="#home">الرئيسية</a>
-    <a href="#companies">الشركات التجارية</a>
-    <a href="#add">إضافة نشاطك</a>
+    <a href="#companies">الشركات</a>
+    <a href="#ads">الإعلانات</a>
+    <a href="#add">أضف نشاطك</a>
   </nav>
 
-  <section id="home">
-    <div class="hero">
-      <h2>مرحباً بكم في سوقنا</h2>
-      <p>
-        منصة سودانية للإعلانات التجارية ودليل الشركات والأنشطة التجارية،
-        تساعدك في الوصول إلى الخدمات المتنوعة في السودان.
-      </p>
+  <section class="hero">
+    <h2>مرحباً بكم في سوقنا</h2>
 
-      <div class="search">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="ابحث عن شركة أو نشاط تجاري"
-        >
-        <button onclick="searchCompanies()">بحث</button>
-      </div>
+    <p>
+      منصة سودانية للإعلانات ودليل الشركات والأنشطة التجارية،
+      تساعدك في الوصول إلى الخدمات والمنتجات والشركات في السودان.
+    </p>
+
+    <div class="search">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="ابحث عن شركة أو نشاط تجاري"
+        onkeyup="searchCompanies()"
+      >
+
+      <button onclick="searchCompanies()">بحث</button>
     </div>
   </section>
 
   <section id="companies">
-    <h2>الشركات التجارية</h2>
+
+    <h2 class="section-title">الشركات والأنشطة التجارية</h2>
 
     <div class="cards" id="companyCards">
 
+      <!-- شركة النحلة -->
       <div class="card company">
         <h3>شركة النحلة</h3>
         <p>خدمات ومنتجات متنوعة</p>
         <p>📍 الشمالية - مروي</p>
-        <a class="button" href="#">عرض التفاصيل</a>
+
+        <a class="button" href="#">
+          عرض التفاصيل
+        </a>
       </div>
 
+      <!-- شركة زين -->
       <div class="card company">
         <h3>شركة زين</h3>
         <p>اتصالات وإنترنت</p>
         <p>📍 الشمالية - مروي</p>
+
         <a
-          class="button"
+          class="button whatsapp"
           href="https://wa.me/249915078710"
           target="_blank"
-        >واتساب</a>
+        >
+          واتساب
+        </a>
       </div>
 
+      <!-- سوداني -->
       <div class="card company">
         <h3>سوداني</h3>
         <p>اتصالات وإنترنت في السودان</p>
         <p>📍 الشمالية - مروي</p>
+
         <a
-          class="button"
+          class="button whatsapp"
           href="https://wa.me/249915078710"
           target="_blank"
-        >واتساب</a>
+        >
+          واتساب
+        </a>
       </div>
 
     </div>
   </section>
 
-  <section>
-    <h2>إعلانات</h2>
+  <section id="ads">
+
+    <h2 class="section-title">الإعلانات</h2>
 
     <div class="cards">
 
       <div class="card">
         <h3>أعلن معنا في سوقنا</h3>
+
         <p>
           يمكنك عرض شركتك أو نشاطك التجاري والوصول إلى العملاء
           من خلال منصة سوقنا.
         </p>
-        <a class="button" href="#add">أضف إعلانك</a>
+
+        <a class="button" href="#add">
+          أضف إعلانك
+        </a>
       </div>
 
       <div class="card">
         <h3>دليل الأنشطة التجارية</h3>
+
         <p>
           اكتشف الشركات والخدمات والأنشطة التجارية الموجودة
           في مختلف مناطق السودان.
@@ -245,27 +307,46 @@
   </section>
 
   <section id="add">
+
     <div class="add-business">
-      <h2>أضف نشاطك التجاري</h2>
+
+      <h2 class="section-title">أضف نشاطك التجاري</h2>
 
       <p>
         هل لديك شركة أو متجر أو نشاط تجاري؟
         أضفه إلى سوقنا ليظهر للعملاء.
       </p>
 
-      <a class="button" href="mailto:info@souqna.com">
+      <a
+        class="button"
+        href="mailto:info@souqna.com"
+      >
         تواصل معنا لإضافة نشاطك
       </a>
+
     </div>
+
   </section>
 
   <footer>
-    <p>© 2026 سوقنا - جميع الحقوق محفوظة</p>
-    <p>إعلانات تجارية للشركات والأنشطة التجارية في السودان</p>
+
+    <strong>سوقنا</strong>
+
+    <br>
+
+    الإعلانات ودليل الشركات والأنشطة التجارية في السودان
+
+    <br><br>
+
+    © 2026 سوقنا - جميع الحقوق محفوظة
+
   </footer>
+
+  <a class="top-button" href="#home">↑</a>
 
   <script>
     function searchCompanies() {
+
       const input = document
         .getElementById("searchInput")
         .value
@@ -275,13 +356,15 @@
       const companies = document.querySelectorAll(".company");
 
       companies.forEach(function(company) {
+
         const text = company.innerText.toLowerCase();
 
         if (input === "" || text.includes(input)) {
-          company.style.display = "block";
+          company.style.display = "";
         } else {
           company.style.display = "none";
         }
+
       });
     }
   </script>
