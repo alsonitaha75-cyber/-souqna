@@ -1,4 +1,5 @@
-<!DOCTYPE html>	
+
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -13,42 +14,79 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #222;
+      background: #f5f5f5;
+      color: #333;
     }
 
     header {
       background: #1769aa;
       color: white;
       text-align: center;
-      padding: 30px 15px;
+      padding: 25px 15px;
     }
 
     header h1 {
-      margin: 0 0 8px;
-      font-size: 34px;
+      margin: 0 0 10px;
+      font-size: 32px;
     }
 
     header p {
       margin: 0;
-      font-size: 17px;
+      font-size: 18px;
     }
 
     nav {
-      background: white;
-      padding: 14px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 10;
+      background: white;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     nav a {
+      display: inline-block;
+      margin: 5px 8px;
       color: #1769aa;
       text-decoration: none;
-      margin: 0 10px;
       font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 35px 15px;
+      background: white;
+    }
+
+    .hero h2 {
+      color: #1769aa;
+      margin-bottom: 20px;
+    }
+
+    .search {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    .search input {
+      flex: 1;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .search button {
+      padding: 13px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #1769aa;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
     }
 
     section {
@@ -57,45 +95,7 @@
       padding: 35px 15px;
     }
 
-    .hero {
-      text-align: center;
-    }
-
-    .hero h2 {
-      color: #1769aa;
-      font-size: 28px;
-    }
-
-    .hero p {
-      line-height: 1.9;
-    }
-
-    .search {
-      display: flex;
-      gap: 10px;
-      max-width: 650px;
-      margin: 25px auto;
-    }
-
-    .search input {
-      flex: 1;
-      padding: 14px;
-      border: 1px solid #ccc;
-      border-radius: 7px;
-      font-size: 16px;
-    }
-
-    .search button {
-      padding: 14px 25px;
-      border: none;
-      border-radius: 7px;
-      background: #1769aa;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .section-title {
+    section h2 {
       text-align: center;
       color: #1769aa;
       margin-bottom: 25px;
@@ -103,81 +103,74 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
-    .card {
+    .company {
       background: white;
-      padding: 24px;
       border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-      text-align: center;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
 
-    .card h3 {
+    .company h3 {
       color: #1769aa;
       margin-top: 0;
-      font-size: 22px;
     }
 
-    .card p {
+    .company p {
       line-height: 1.8;
     }
 
     .button {
       display: inline-block;
-      padding: 11px 20px;
+      padding: 10px 16px;
       background: #1769aa;
       color: white;
       text-decoration: none;
       border-radius: 7px;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     .whatsapp {
       background: #25D366;
     }
 
-    .add-business {
-      background: #eaf4fb;
-      padding: 35px 20px;
-      text-align: center;
+    .details {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #ddd;
+    }
+
+    .details img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    #add {
+      background: white;
       border-radius: 12px;
     }
 
     footer {
+      background: #1769aa;
+      color: white;
+      text-align: center;
+      padding: 20px;
       margin-top: 30px;
-      background: #1769aa;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-      line-height: 1.8;
-    }
-
-    .top-button {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: #1769aa;
-      color: white;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 45px;
-      text-decoration: none;
-      font-size: 20px;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 28px;
+        font-size: 27px;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 6px;
+      header p {
+        font-size: 16px;
       }
 
       .search {
@@ -202,48 +195,54 @@
     <a href="#home">الرئيسية</a>
     <a href="#companies">الشركات</a>
     <a href="#ads">الإعلانات</a>
-    <a href="#add">أضف نشاطك</a>
+    <a href="#add">إضافة نشاطك</a>
   </nav>
 
-  <section class="hero">
+  <div class="hero">
     <h2>مرحباً بكم في سوقنا</h2>
-
-    <p>
-      منصة سودانية للإعلانات ودليل الشركات والأنشطة التجارية،
-      تساعدك في الوصول إلى الخدمات والمنتجات والشركات في السودان.
-    </p>
 
     <div class="search">
       <input
         type="text"
         id="searchInput"
-        placeholder="ابحث عن شركة أو نشاط تجاري"
+        placeholder="اكتب اسم الشركة..."
         onkeyup="searchCompanies()"
       >
-
       <button onclick="searchCompanies()">بحث</button>
     </div>
-  </section>
+  </div>
 
   <section id="companies">
+    <h2>الشركات التجارية</h2>
 
-    <h2 class="section-title">الشركات والأنشطة التجارية</h2>
+    <div class="cards">
 
-    <div class="cards" id="companyCards">
-
-      <!-- شركة النحلة -->
-      <div class="card company">
+      <div class="company">
         <h3>شركة النحلة</h3>
         <p>خدمات ومنتجات متنوعة</p>
         <p>📍 الشمالية - مروي</p>
 
-        <a class="button" href="#">
-          عرض التفاصيل
-        </a>
+        <a class="button" href="#bee-details">عرض التفاصيل</a>
+
+        <div class="details" id="bee-details">
+          <p>
+            شركة النحلة تقدم خدمات ومنتجات متنوعة في مدينة مروي
+            والولاية الشمالية.
+          </p>
+
+          <p>📍 الموقع: الشمالية - مروي</p>
+
+          <a
+            class="button whatsapp"
+            href="https://wa.me/249915078710"
+            target="_blank"
+          >
+            واتساب
+          </a>
+        </div>
       </div>
 
-      <!-- شركة زين -->
-      <div class="card company">
+      <div class="company">
         <h3>شركة زين</h3>
         <p>اتصالات وإنترنت</p>
         <p>📍 الشمالية - مروي</p>
@@ -257,8 +256,7 @@
         </a>
       </div>
 
-      <!-- سوداني -->
-      <div class="card company">
+      <div class="company">
         <h3>سوداني</h3>
         <p>اتصالات وإنترنت في السودان</p>
         <p>📍 الشمالية - مروي</p>
@@ -276,77 +274,37 @@
   </section>
 
   <section id="ads">
+    <h2>الإعلانات</h2>
 
-    <h2 class="section-title">الإعلانات</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>أعلن معنا في سوقنا</h3>
-
-        <p>
-          يمكنك عرض شركتك أو نشاطك التجاري والوصول إلى العملاء
-          من خلال منصة سوقنا.
-        </p>
-
-        <a class="button" href="#add">
-          أضف إعلانك
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>دليل الأنشطة التجارية</h3>
-
-        <p>
-          اكتشف الشركات والخدمات والأنشطة التجارية الموجودة
-          في مختلف مناطق السودان.
-        </p>
-      </div>
-
+    <div class="company">
+      <h3>مساحة إعلانية</h3>
+      <p>
+        يمكنك إضافة إعلان شركتك أو نشاطك التجاري في سوقنا.
+      </p>
     </div>
   </section>
 
   <section id="add">
+    <h2>إضافة نشاطك</h2>
 
-    <div class="add-business">
-
-      <h2 class="section-title">أضف نشاطك التجاري</h2>
-
+    <div class="company">
       <p>
-        هل لديك شركة أو متجر أو نشاط تجاري؟
-        أضفه إلى سوقنا ليظهر للعملاء.
+        لإضافة شركتك أو نشاطك التجاري إلى دليل سوقنا،
+        تواصل معنا عبر البريد الإلكتروني:
       </p>
 
-      <a
-        class="button"
-        href="mailto:info@souqna.com"
-      >
-        تواصل معنا لإضافة نشاطك
-      </a>
-
+      <p>
+        <strong>info@souqna.com</strong>
+      </p>
     </div>
-
   </section>
 
   <footer>
-
-    <strong>سوقنا</strong>
-
-    <br>
-
-    الإعلانات ودليل الشركات والأنشطة التجارية في السودان
-
-    <br><br>
-
     © 2026 سوقنا - جميع الحقوق محفوظة
-
   </footer>
-
-  <a class="top-button" href="#home">↑</a>
 
   <script>
     function searchCompanies() {
-
       const input = document
         .getElementById("searchInput")
         .value
@@ -356,7 +314,6 @@
       const companies = document.querySelectorAll(".company");
 
       companies.forEach(function(company) {
-
         const text = company.innerText.toLowerCase();
 
         if (input === "" || text.includes(input)) {
@@ -364,7 +321,6 @@
         } else {
           company.style.display = "none";
         }
-
       });
     }
   </script>
