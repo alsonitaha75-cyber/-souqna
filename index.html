@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>سوقنا - دليل الشركات والإعلانات</title>
 
   <style>
@@ -14,7 +15,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f5f5f5;
-      color: #333;
+      color: #222;
     }
 
     header {
@@ -39,9 +40,9 @@
       top: 0;
       z-index: 10;
       background: white;
-      padding: 12px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 12px 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     nav a {
@@ -52,49 +53,61 @@
       font-weight: bold;
     }
 
-    .hero {
-      text-align: center;
-      padding: 35px 15px;
-      background: white;
+    nav a:hover {
+      color: #0d4f80;
     }
 
-    .hero h2 {
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 15px;
+    }
+
+    #home {
+      text-align: center;
+    }
+
+    #home h2 {
+      margin-bottom: 10px;
       color: #1769aa;
-      margin-bottom: 20px;
     }
 
     .search {
-      max-width: 600px;
-      margin: auto;
       display: flex;
-      gap: 8px;
+      max-width: 650px;
+      margin: 25px auto 0;
+      gap: 10px;
     }
 
     .search input {
       flex: 1;
       padding: 13px;
       border: 1px solid #ccc;
-      border-radius: 8px;
+      border-radius: 7px;
       font-size: 16px;
+      outline: none;
+    }
+
+    .search input:focus {
+      border-color: #1769aa;
     }
 
     .search button {
-      padding: 13px 20px;
+      padding: 13px 22px;
       border: none;
-      border-radius: 8px;
       background: #1769aa;
       color: white;
       cursor: pointer;
       font-size: 16px;
+      border-radius: 7px;
     }
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 35px 15px;
+    .search button:hover {
+      background: #0d4f80;
     }
 
-    section h2 {
+    #companies h2,
+    #add h2 {
       text-align: center;
       color: #1769aa;
       margin-bottom: 25px;
@@ -102,7 +115,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
 
@@ -110,36 +123,57 @@
       background: white;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     }
 
     .company h3 {
-      color: #1769aa;
       margin-top: 0;
+      color: #1769aa;
+      font-size: 23px;
     }
 
     .company p {
       line-height: 1.8;
+      margin: 8px 0;
     }
 
     .button {
       display: inline-block;
+      margin-top: 12px;
       padding: 10px 16px;
       background: #1769aa;
       color: white;
       text-decoration: none;
       border-radius: 7px;
-      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+      font-size: 15px;
+    }
+
+    .button:hover {
+      background: #0d4f80;
     }
 
     .whatsapp {
-      background: #25D366;
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+    }
+
+    .whatsapp:hover {
+      background: #1da851;
     }
 
     .details {
+      display: none;
       margin-top: 15px;
       padding-top: 15px;
       border-top: 1px solid #ddd;
+      text-align: right;
     }
 
     .details img {
@@ -147,25 +181,41 @@
       max-height: 220px;
       object-fit: cover;
       border-radius: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    #add {
+    .details p {
+      line-height: 1.8;
+    }
+
+    .add-box {
       background: white;
+      padding: 25px;
       border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .add-box p {
+      line-height: 1.8;
+    }
+
+    .email {
+      color: #1769aa;
+      font-weight: bold;
     }
 
     footer {
       background: #1769aa;
       color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 30px;
+      padding: 20px 15px;
+      margin-top: 20px;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 27px;
+        font-size: 28px;
       }
 
       header p {
@@ -179,123 +229,178 @@
       .search button {
         width: 100%;
       }
+
+      nav a {
+        margin: 4px 6px;
+      }
     }
   </style>
 </head>
 
-<body id="home">
+<body>
 
   <header>
     <h1>سوقنا</h1>
-    <p>للإعلانات ودليل الشركات والأنشطة التجارية في السودان</p>
+    <p>للإعلانات التجارية والأنشطة التجارية في السودان</p>
   </header>
 
   <nav>
     <a href="#home">الرئيسية</a>
-    <a href="#companies">الشركات</a>
-    <a href="#ads">الإعلانات</a>
+    <a href="#companies">الشركات التجارية</a>
     <a href="#add">إضافة نشاطك</a>
   </nav>
 
-  <div class="hero">
+  <section id="home">
+
     <h2>مرحباً بكم في سوقنا</h2>
 
+    <p>
+      دليل الشركات والأنشطة التجارية والإعلانات في السودان
+    </p>
+
     <div class="search">
+
       <input
         type="text"
         id="searchInput"
         placeholder="اكتب اسم الشركة..."
         onkeyup="searchCompanies()"
       >
+
       <button onclick="searchCompanies()">بحث</button>
+
     </div>
-  </div>
+
+  </section>
 
   <section id="companies">
-    <h2>الشركات التجارية</h2>
+
+    <h2>الشركات والأنشطة التجارية</h2>
 
     <div class="cards">
 
+      <!-- شركة النحلة -->
       <div class="company">
+
         <h3>شركة النحلة</h3>
-        <p>خدمات ومنتجات متنوعة</p>
-        <p>📍 الشمالية - مروي</p>
 
-        <a class="button" href="#bee-details">عرض التفاصيل</a>
+        <p>
+          خدمات ومنتجات متنوعة
+        </p>
 
-        <div class="details" id="bee-details">
+        <p>
+          📍 الموقع: الشمالية - مروي
+        </p>
+
+        <button
+          class="button"
+          onclick="toggleDetails('bee-details')"
+        >
+          عرض التفاصيل
+        </button>
+
+        <div
+          class="details"
+          id="bee-details"
+        >
+
+          <h4>تفاصيل شركة النحلة</h4>
+
           <p>
-            شركة النحلة تقدم خدمات ومنتجات متنوعة في مدينة مروي
-            والولاية الشمالية.
+            شركة النحلة تقدم خدمات ومنتجات متنوعة
+            في منطقة الشمالية - مروي.
           </p>
 
-          <p>📍 الموقع: الشمالية - مروي</p>
+          <p>
+            📍 الموقع: الشمالية - مروي
+          </p>
+
+          <p>
+            للتواصل والاستفسار:
+          </p>
 
           <a
-            class="button whatsapp"
+            class="whatsapp"
             href="https://wa.me/249915078710"
             target="_blank"
           >
-            واتساب
+            التواصل عبر واتساب
           </a>
+
         </div>
+
       </div>
 
+      <!-- شركة زين -->
       <div class="company">
+
         <h3>شركة زين</h3>
-        <p>اتصالات وإنترنت</p>
-        <p>📍 الشمالية - مروي</p>
+
+        <p>
+          اتصالات وإنترنت
+        </p>
+
+        <p>
+          📍 الموقع: الشمالية - مروي
+        </p>
 
         <a
-          class="button whatsapp"
+          class="whatsapp"
           href="https://wa.me/249915078710"
           target="_blank"
         >
           واتساب
         </a>
+
       </div>
 
+      <!-- سوداني -->
       <div class="company">
+
         <h3>سوداني</h3>
-        <p>اتصالات وإنترنت في السودان</p>
-        <p>📍 الشمالية - مروي</p>
+
+        <p>
+          اتصالات وإنترنت في السودان
+        </p>
+
+        <p>
+          📍 الموقع: الشمالية - مروي
+        </p>
 
         <a
-          class="button whatsapp"
+          class="whatsapp"
           href="https://wa.me/249915078710"
           target="_blank"
         >
           واتساب
         </a>
+
       </div>
 
     </div>
-  </section>
 
-  <section id="ads">
-    <h2>الإعلانات</h2>
-
-    <div class="company">
-      <h3>مساحة إعلانية</h3>
-      <p>
-        يمكنك إضافة إعلان شركتك أو نشاطك التجاري في سوقنا.
-      </p>
-    </div>
   </section>
 
   <section id="add">
-    <h2>إضافة نشاطك</h2>
 
-    <div class="company">
+    <div class="add-box">
+
+      <h2>أضف نشاطك التجاري</h2>
+
       <p>
-        لإضافة شركتك أو نشاطك التجاري إلى دليل سوقنا،
-        تواصل معنا عبر البريد الإلكتروني:
+        هل لديك شركة أو نشاط تجاري وتريد الإعلان عنه في سوقنا؟
       </p>
 
       <p>
-        <strong>info@souqna.com</strong>
+        تواصل معنا لإضافة نشاطك التجاري إلى الدليل.
       </p>
+
+      <p class="email">
+        البريد الإلكتروني: info@souqna.com
+      </p>
+
     </div>
+
   </section>
 
   <footer>
@@ -303,26 +408,53 @@
   </footer>
 
   <script>
+
+    function toggleDetails(id) {
+
+      const details = document.getElementById(id);
+
+      if (details.style.display === "block") {
+        details.style.display = "none";
+      } else {
+        details.style.display = "block";
+      }
+
+    }
+
     function searchCompanies() {
+
       const input = document
         .getElementById("searchInput")
         .value
         .trim()
         .toLowerCase();
 
-      const companies = document.querySelectorAll(".company");
+      const companies =
+        document.querySelectorAll(".company");
 
       companies.forEach(function(company) {
-        const text = company.innerText.toLowerCase();
 
-        if (input === "" || text.includes(input)) {
+        const text =
+          company.innerText.toLowerCase();
+
+        if (
+          input === "" ||
+          text.includes(input)
+        ) {
+
           company.style.display = "";
+
         } else {
+
           company.style.display = "none";
+
         }
+
       });
+
     }
+
   </script>
 
 </body>
-</html>
+  </html>
