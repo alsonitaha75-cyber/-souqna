@@ -476,6 +476,8 @@
       const companies =
         document.querySelectorAll(".company");
 
+      let found = false;
+
       companies.forEach(function(company) {
 
         const text =
@@ -488,6 +490,8 @@
 
           company.style.display = "";
 
+          found = true;
+
         } else {
 
           company.style.display = "none";
@@ -495,6 +499,12 @@
         }
 
       });
+
+      if (input !== "" && !found) {
+
+        alert("لم يتم العثور على شركة أو نشاط بهذا الاسم");
+
+      }
 
     }
 
